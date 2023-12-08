@@ -11,7 +11,7 @@ class UserInputViewModel : ViewModel(){
 
     fun onEvent(event: UserDataUiEvents) {
         when(event){
-            is UserDataUiEvents.USerNameEntered -> {
+            is UserDataUiEvents.UserNameEntered -> {
                 uiState.value = uiState.value.copy(
                     nameEntered = event.name
                 )

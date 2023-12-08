@@ -11,7 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.myapplication.data.UserDataUiEvents
 import com.example.myapplication.ui.TextComponent
+import com.example.myapplication.ui.TextFieldComponent
 import com.example.myapplication.ui.TopBar
 import com.example.myapplication.ui.UserInputViewModel
 
@@ -32,6 +34,12 @@ fun UserInputScreen(userInputViewModel: UserInputViewModel) {
                 textSize = 18.sp)
 
             Spacer(modifier = Modifier.size(60.dp))
+
+            TextFieldComponent(onTextChanged = {
+                userInputViewModel.onEvent(
+                    UserDataUiEvents.UserNameEntered(it)
+                )
+            })
         }
     }
 }
@@ -39,5 +47,5 @@ fun UserInputScreen(userInputViewModel: UserInputViewModel) {
 @Preview
 @Composable
 fun UserInputScreenPreview(){
-    UserInputScreen(userInputViewModel)
+    UserInputScreen(UserInputViewModel())
 }

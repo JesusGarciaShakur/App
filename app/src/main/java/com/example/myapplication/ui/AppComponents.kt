@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
@@ -67,19 +68,21 @@ fun TextComponentPreview(){
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TextFieldComponent(){
+fun TextFieldComponent(
+    onTextChanged : (name:String)-> Unit
+){
     var currentValue by remember{
         mutableStateOf("")
     }
-    OutlinedTextField(value = currentValue,
-        onValueChange = {},
+    OutlinedTextField(
+        modifier = Modifier.fillMaxWidth(),
+        value = currentValue,
+        onValueChange = {
+            currentValue = it
+            onTextChanged(it)
+        },
         placeholder = {
             Text(text = "Enter your name", fontSize = 18.sp)
-        })
-}
-
-@Preview(showBackground = true)
-@Composable
-fun TextFieldComponentPreview(){
-    TextFieldComponent()
+        },
+        textStyle = TextStyle.Default.copy(fontSize = 24.sp))
 }
