@@ -91,7 +91,7 @@ fun UserInputScreen(userInputViewModel: UserInputViewModel,
 
 
             Spacer(modifier =  Modifier.weight(1f))
-
+            //Connection to database
             if(userInputViewModel.isValidState()){
                 ButtonComponent(
                     goToDetailsScreen = {
