@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "193353100144",
+    "project_id": "funfacts-98845",
+    "storage_bucket": "funfacts-98845.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193353100144:android:8b1481a7ee9d6117c7fdb5",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-PMO0BJ00omVHrdBmCEfe4F3gGz2ZK54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
